@@ -17,6 +17,10 @@ group :development, :test do
   gem 'guard-livereload'
   gem 'guard-rspec'
 
+  gem 'launchy'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+
   gem 'spring'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
