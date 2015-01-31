@@ -16,6 +16,8 @@ group :development, :test do
   gem 'guard-bundler'
   gem 'guard-livereload'
   gem 'guard-rspec'
+  gem 'turnip'
+  gem 'capybara'
 
   gem 'launchy'
   gem 'rspec-rails'

@@ -1,26 +1,9 @@
-#!/usr/bin/env bash -c 'while bundle exec guard; do echo "Restarting Guard..."; done'
-
-# A sample Guardfile
-# More info at https://github.com/guard/guard#readme
-
-## Uncomment to clear the screen before every task
 clearing :on
 
-## Guard internally checks for changes in the Guardfile and exits.
-## If you want Guard to automatically start up again, run guard in a
-## shell loop, e.g.:
-##
-##  $ while bundle exec guard; do echo "Restarting Guard..."; done
+#$ while bundle exec guard; do echo "Restarting Guard..."; done
 
 guard :bundler do
-  require 'guard/bundler'
-  require 'guard/bundler/verify'
-  helper = Guard::Bundler::Verify.new
-
-  files = ['Gemfile']
-
-  # Assume files are symlinked from somewhere
-  files.each { |file| watch(helper.real_path(file)) }
+  watch("Gemfile")
 end
 
 guard 'livereload' do
@@ -41,7 +24,7 @@ end
 #  * zeus: 'zeus rspec' (requires the server to be started separately)
 #  * 'just' rspec: 'rspec'
 
-guard :rspec, cmd: "bin/rspec" do
+guard :rspec, cmd: "bin/rspec", all_on_start: true do
   require "guard/rspec/dsl"
   dsl = Guard::RSpec::Dsl.new(self)
 

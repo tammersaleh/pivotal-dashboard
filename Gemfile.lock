@@ -45,6 +45,12 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
+    capybara (2.4.4)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     coderay (1.1.0)
@@ -67,6 +73,8 @@ GEM
     execjs (2.2.2)
     ffi (1.9.6)
     formatador (0.2.5)
+    gherkin (2.12.2)
+      multi_json (~> 1.3)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
     guard (2.11.1)
@@ -214,6 +222,9 @@ GEM
       hitimes
     turbolinks (2.5.3)
       coffee-rails
+    turnip (1.2.4)
+      gherkin (>= 2.5)
+      rspec (>= 2.14.0, < 4.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.0)
@@ -224,12 +235,15 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (~> 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   byebug
+  capybara
   coffee-rails (~> 4.1.0)
   guard
   guard-bundler
@@ -246,5 +260,6 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   turbolinks
+  turnip
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
